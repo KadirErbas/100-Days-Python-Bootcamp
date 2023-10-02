@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Weather Page</h1>
+     <!-- jinja -->
+     <h4>Istanbul = {{istanbul}}</h4>
+     <br>
+     <h4>Batman = {{batman}}</h4>
+     <br>
+     {%for key,value in rome.items %}
+     <h4><li>Rome = {{key}} = {{value}}</li></h4>
+     {% endfor %}
+     <br>
+     <ul>
+     {% for item in paris %}
+        <h4><li>paris = {{item}}</li></h4>
+     {% endfor %}
+     </ul>
+     <br>
+     {% if user_premium %}
+     <h4> User Premium! </h4>
+     {% else %}
+     <h4> User Not Premium! </h4>
+     {% endif %}
+     <br>
+     <h4> test = {{test | upper}}</h4>
+     <br>
+     <h4><a href="{% url 'template_app:index' %}"> go to main page</a></h4>
+{% endblock %}
